@@ -2,18 +2,22 @@
   "items": {
     "chicken-nuggets": {
       "quanity": 7,
+      "max-stock": 20,
       "price": 1.5
     },
     "my-will-to-live": {
-      "quanity": 4,
+      "quanity": 0,
+      "max-stock": 3,
       "price": 0.5
     },
     "coca-cola": {
       "quanity": 11,
+      "max-stock": 12,
       "price": 1.75
     },
     "jingle-all-the-way-on-dvd": {
       "quanity": 2,
+      "max-stock": 7,
       "price": 3.25
     }
   },
@@ -27,7 +31,7 @@
       "1": 25,
       ".25": 25,
       ".10": 25,
-      ".05": 25
+      ".05": 0
     }
   }
 }
