@@ -50,12 +50,12 @@ describe("Vending Machine", () => {
     //       expect(result).toEqual("No");
     //     });
     //   });
-    //   describe("When item is selected with no credit", () => {
-    //     it("Should display item, price and in-stock", () => {
-    //       const result = makePurchase('a', 1, 0);
-    //       expect(result).toEqual(["chicken-nuggets", 1.5, true]);
-    //     });
-    //   });
+      describe("When item is selected with no credit", () => {
+        it("Should display item, price and in-stock", () => {
+          const result = vendingMachine.makePurchase('a', 0, 0);
+          expect(result).toEqual(["chicken-nuggets", 1.5, 'In Stock']);
+        });
+      });
     // });
     // describe("Maintenance uses", () => {
     //   describe("Worker adds change", () => {
