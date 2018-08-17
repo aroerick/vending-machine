@@ -1,25 +1,33 @@
 {
   "items": {
-    "chicken-nuggets": {
-      "quanity": 7,
-      "max-stock": 20,
-      "price": 1.5
-    },
-    "my-will-to-live": {
-      "quanity": 0,
-      "max-stock": 3,
-      "price": 0.5
-    },
-    "coca-cola": {
-      "quanity": 11,
-      "max-stock": 12,
-      "price": 1.75
-    },
-    "jingle-all-the-way-on-dvd": {
-      "quanity": 2,
-      "max-stock": 7,
-      "price": 3.25
-    }
+    "a": [
+      {
+        "name": "chicken-nuggets",
+        "quantity": 7,
+        "max-stock": 20,
+        "price": 1.5
+      },
+      {
+        "name": "my-will-to-live",
+        "quantity": 0,
+        "max-stock": 3,
+        "price": 0.5
+      }
+    ],
+    "b": [
+      {
+        "name": "coca-cola",
+        "quantity": 11,
+        "max-stock": 12,
+        "price": 1.75
+      },
+      {
+        "name": "jingle-all-the-way-on-dvd",
+        "quantity": 2,
+        "max-stock": 7,
+        "price": 3.25
+      }
+    ]
   },
   "cash": {
     "bills": {
