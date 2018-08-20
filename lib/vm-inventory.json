@@ -9,7 +9,7 @@
       },
       {
         "name": "my-will-to-live",
-        "quantity": 0,
+        "quantity": 1,
         "max-stock": 3,
         "price": 0.5
       }
@@ -17,7 +17,7 @@
     "b": [
       {
         "name": "coca-cola",
-        "quantity": 11,
+        "quantity": 0,
         "max-stock": 12,
         "price": 1.75
       },
@@ -31,15 +31,16 @@
   },
   "cash": {
     "bills": {
-      "10": 0,
-      "5": 0
+      "10": 3,
+      "5": 2
     },
     "coins": {
-      "toonie": 0,
+      "toonie": 5,
       "loonie": 25,
       "quarter": 25,
       "dime": 25,
-      "nickel": 25
+      "nickel": 0
     }
-  }
+  },
+  "credit": 1
 }
