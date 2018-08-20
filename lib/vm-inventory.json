@@ -27,7 +27,8 @@
         "max-stock": 7,
         "price": 3.25
       }
-    ]
+    ],
+    "total-items": 4
   },
   "cash": {
     "bills": {

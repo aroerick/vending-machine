@@ -32,6 +32,15 @@ describe("Vending Machine", () => {
         expect(result).toEqual("Out of Stock");
       });
     });
+    describe("When customer has remaining credit after purchase", () => {
+      it("Should return change to customer", () => {
+        const result = vendingMachine.makeChange(2, 1.55);
+        const cash = vendingMachine.data.cash.coins;
+        expect(result).toEqual(["quarter", "dime", "dime"]);
+        expect(cash.quarter).toEqual(24);
+        expect(cash.dime).toEqual(23);
+      });
+    });
     describe("When item selected is in stock and customer has enough credit", () => {
       it("Should remove item from inventory and give to customer", () => {
         const result = vendingMachine.makePurchase(
@@ -40,17 +49,8 @@ describe("Vending Machine", () => {
           vendingMachine.data.credit
         );
         const inv = vendingMachine.data.items["a"][1].quantity;
-        expect(result).toEqual("my-will-to-live");
+        expect(result).toEqual("my-will-to-live,quarter,quarter");
         expect(inv).toEqual(0);
-      });
-    });
-    describe("When customer has remaining credit after purchase", () => {
-      it("Should return change to customer", () => {
-        const result = vendingMachine.makeChange(2, 1.55);
-        const cash = vendingMachine.data.cash.coins;
-        expect(result).toEqual(["quarter", "dime", "dime"]);
-        expect(cash.quarter).toEqual(24);
-        expect(cash.dime).toEqual(23);
       });
     });
     describe("When customer inserts bill over 10 dollars", () => {
@@ -85,6 +85,17 @@ describe("Vending Machine", () => {
       it("Should add provided stock to inventory", () => {
         const result = vendingMachine.fillInventory(vendingMachine.data.items);
         expect(result["b"][1].quantity).toEqual(result["b"][1]["max-stock"]);
+      });
+    });
+    describe("Worker checks inventory", () => {
+      it("Should show quantity for items", () => {
+        const result = vendingMachine.printInventory(vendingMachine.data.items);
+        expect(result).toEqual([
+          { "chicken-nuggets": 20 },
+          { "my-will-to-live": 3 },
+          { "coca-cola": 12 },
+          { "jingle-all-the-way-on-dvd": 7 }
+        ]);
       });
     });
   });
