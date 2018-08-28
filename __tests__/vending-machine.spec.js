@@ -75,7 +75,7 @@ describe("Vending Machine", () => {
   describe("Maintenance uses", () => {
     describe("Worker adds change", () => {
       it("Should add provided change to cash count and remove bills", () => {
-        const result = vendingMachine.fillCash(vendingMachine.data.cash);
+        const result = vendingMachine.fillCash();
         expect(result.coins["toonie"]).toEqual(30);
         expect(result.coins["loonie"]).toEqual(25);
         expect(result.bills["10"]).toEqual(0);
@@ -83,13 +83,13 @@ describe("Vending Machine", () => {
     });
     describe("Worker adds stock", () => {
       it("Should add provided stock to inventory", () => {
-        const result = vendingMachine.fillInventory(vendingMachine.data.items);
+        const result = vendingMachine.fillInventory();
         expect(result["b"][1].quantity).toEqual(result["b"][1]["max-stock"]);
       });
     });
     describe("Worker checks inventory", () => {
       it("Should show quantity for items", () => {
-        const result = vendingMachine.printInventory(vendingMachine.data.items);
+        const result = vendingMachine.printInventory();
         expect(result).toEqual([
           { "chicken-nuggets": 20 },
           { "my-will-to-live": 3 },
